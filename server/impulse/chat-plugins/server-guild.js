@@ -215,7 +215,7 @@ exports.commands = {
 				},
 			};
 			save();
-			fs.writeFile('./logs/leagues/' + leagueid + '', ' ' + leagueid +' has been created by ' + Server.nameColor(user.name, true) + '', function (err) {
+			fs.writeFile('./logs/leagues/' + leagueid + '.log', ' ' + leagueid +' has been created by ' + Server.nameColor(user.name, true) + '', function (err) {
                    if (err) throw err;
            });
 			log(user.name + " has created the guild '" + leagueName + "'.");
