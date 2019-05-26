@@ -18,7 +18,7 @@ exports.special = ['princesky'];
 exports.serverIp = "impulsereborn.herokuapp.com";
 
 /* X amount of players needed in tournaments to earn rewards */
-exports.sizeRequiredToEarn = 4;
+exports.sizeRequiredToEarn = 2;
 
 /****************************
 * Used to set expTimer ******
@@ -27,7 +27,7 @@ exports.sizeRequiredToEarn = 4;
 * user can earn exp  ********
 * default to 15 seconds *****
 *****************************/
-exports.expTimer = 15000;
+exports.expTimer = 10000;
 
 /* Used to rename plugins */
 exports.serverName = "Impulse";
