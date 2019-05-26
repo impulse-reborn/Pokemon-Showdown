@@ -69,6 +69,6 @@ exports.commands = {
 				time: displayTime(convertTime(user.time)),
 			};
 		});
-		this.sendReplyBox(rankLadder("Ontime Ladder", "Total Ontime", keys, "time"));
+		this.sendReplyBox(Server.rankLadder("Ontime Ladder", "Total Ontime", keys, "time"));
 	},
 };
