@@ -20,6 +20,24 @@ const asciiMap = new Map([
 	["\u2460", "1"], ["\u2461", "2"], ["\u2462", "3"], ["\u2463", "4"], ["\u2464", "5"], ["\u2465", "6"], ["\u2466", "7"], ["\u2467", "8"], ["\u2468", "9"], ["\u24EA", "0"],
 ]);
 
+function clearRoom(room) {
+	let len = (room.log.log && room.log.log.length) || 0;
+	let users = [];
+	while (len--) {
+		room.log.log[len] = '';
+	}
+	for (let u in room.users) {
+		users.push(u);
+		Users(u).leaveRoom(room, Users(u).connections[0]);
+	}
+	len = users.length;
+	setTimeout(() => {
+		while (len--) {
+			Users(users[len]).joinRoom(room, Users(users[len]).connections[0]);
+		}
+	}, 1500);
+}
+
 let pmName = `~${Config.serverName} Server`;
 let regdateCache = {};
 
@@ -201,24 +219,25 @@ exports.commands = {
 	backhelp: ["/back - Sets a users away status back to normal."],
 	
 	// Clearall & Global Clearall
-   clearroom: function (target, room, user) {
-        if (!this.can('clearall')) return;
-        var len = room.log.length,
-            users = [];
-        while (len--) {
-            room.log[len] = '';
-        }
-        for (var user in room.users) {
-            users.push(user);
-            Users.get(user).leaveRoom(room, Users.get(user).connections[0]);
-        }
-        len = users.length;
-        setTimeout(function() {
-            while (len--) {
-                Users.get(users[len]).joinRoom(room, Users.get(users[len]).connections[0]);
-            }
-        }, 1000);
-    },
+   clearall: function (target, room, user) {
+		if (!this.can('lockdown')) return false;
+		if (room.battle) return this.sendReply("You cannot clearall in battle rooms.");
+
+		clearRoom(room);
+
+		this.modlog(`CLEARALL`);
+		this.privateModAction(`(${user.name} used /clearall.)`);
+	},
+
+	gclearall: 'globalclearall',
+	globalclearall: function (target, room, user) {
+		if (!this.can('lockdown')) return false;
+
+		Rooms.rooms.forEach(room => clearRoom(room));
+		Users.users.forEach(user => user.popup('All rooms have been cleared.'));
+		this.modlog(`GLOBALCLEARALL`);
+		this.privateModAction(`(${user.name} used /globalclearall.)`);
+	},
 
 	// RegDate & Seen
 	"!regdate": true,
