@@ -1121,7 +1121,7 @@ class Tournament extends Rooms.RoomGame {
 				this.room.addRaw("<b><font color='" + color + "'>" + Chat.escapeHTML(runnerUp) + "</font> has won " + "<font color='" + color + "'>" + secondMoney + "</font> " + (firstMoney === 1 ? global.currencyName : global.currencyPlural) + " for winning the tournament!</b>");
 			}
       if ((tourSize >= sizeRequiredToEarn) && this.room.isOfficial) {
-				Server.leagueTourPoints(toId(winner), toId(runnerUp), tourSize, this.room);
+				Server.leagueTourPoints(toID(winner), toID(runnerUp), tourSize, this.room);
 			}
 
         }
