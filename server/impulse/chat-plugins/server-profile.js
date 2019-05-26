@@ -660,7 +660,7 @@ exports.commands = {
 		if (target.length > 18) return this.errorReply("Usernames cannot exceed 18 characters.");
 		if (!this.runBroadcast()) return;
 		let targetUser = Users.get(target);
-		//let online = (targetUser ? targetUser.connected : false);
+		// let online = (targetUser ? targetUser.connected : false);
 		let username = (targetUser ? targetUser.name : target);
 		let userid = (targetUser ? targetUser.userid : toID(target));
 		let profile = Db.profile.get(userid, {data: {title: {}, music: {}}});
@@ -668,7 +668,7 @@ exports.commands = {
 		if (targetUser && targetUser.avatar[0] === "#") avatar = `http://play.pokemonshowdown.com/sprites/trainers/${targetUser.avatar.substr(1)}.png`;
 		let userSymbol = (Users.usergroups[userid] ? Users.usergroups[userid].substr(0, 1) : "Regular User");
 		let userGroup = (Config.groups[userSymbol] ? `Global ${Config.groups[userSymbol].name}` : `Regular User`);
-		let ip = (Users(userid) ? geoip.lookup(Users(userid).latestIp) : false);
+		// let ip = (Users(userid) ? geoip.lookup(Users(userid).latestIp) : false);
 		let regdate = "(Unregistered)";
 		Server.regdate(userid, date => {
 			if (date) {
