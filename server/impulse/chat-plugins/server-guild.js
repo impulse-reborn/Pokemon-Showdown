@@ -218,7 +218,7 @@ exports.commands = {
 			fs.writeFile('./logs/leagues/' + leagueid + '.log', ' ' + leagueid +' has been created by ' + Server.nameColor(user.name, true) + '', function (err) {
                    if (err) throw err;
            });
-			log(user.name + " has created the guild '" + leagueName + "'.");
+			modlog(user.name + " has created the guild '" + leagueName + "'.");
 			this.sendReply("You've created the guild \"" + leagueName + "\".");
 		},
 
