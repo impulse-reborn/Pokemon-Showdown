@@ -931,6 +931,9 @@ class CommandContext extends MessageContext {
 	sendReplyBox(html) {
 		this.sendReply(`|html|<div class="infobox">${html}</div>`);
 	}
+   sendRB(html) {
+      this.sendReply(`|html|${html}`);
+   }
 	/**
 	 * @param {string} message
 	 */
