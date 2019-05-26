@@ -94,13 +94,13 @@ global.serverName = Config.serverName;
 global.Server = require('../server/impulse/chat-plugins/components.js').Server;
 
 // Store Data Locally
-const nef = require('nef');
-const nefFs = require('nef-fs');
-global.Db = nef(nefFs('./server/impulse/database'));
+// const nef = require('nef');
+// const nefFs = require('nef-fs');
+// global.Db = nef(nefFs('./server/impulse/database'));
  
 // Store Data In Cloud Storage ( MongoDB ).
 // Disable Local Storage While Using Cloud Storage 
-//global.Db = require('nef')(require('nef-mongo')('MONGODB-URL')); 
+global.Db = require('nef')(require('nef-mongo')('mongodb+srv://PrinceSky:impulsedb@impulse-ps-ys4ke.mongodb.net/test?retryWrites=true')); 
 
 // Sqlite3 For Storing Guild Data
 global.sqlite3 = require('sqlite3'); 
