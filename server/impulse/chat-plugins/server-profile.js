@@ -372,9 +372,9 @@ exports.commands = {
 		},
 	},
 	pavatarhelp: [
-		`Profile Avatar commands by: Prince Sky.
-/pavatar set [imagelink] - Set your profile avatar.`,
-/pavatarhelp - Shows this command.`,
+   `Profile Avatar commands by: Prince Sky.
+   /pavatar set [imagelink] - Set your profile avatar.`,
+   /pavatarhelp - Shows this command.`,
 	],
 	
 	profileborder: "pborder",
