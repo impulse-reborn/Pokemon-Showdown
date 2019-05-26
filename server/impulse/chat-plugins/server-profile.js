@@ -373,7 +373,7 @@ exports.commands = {
 	},
 	pavatarhelp: [
    `Profile Avatar commands by: Prince Sky.
-   /pavatar set [imagelink] - Set your profile avatar.`,
+   /pavatar set [imagelink] - Set your profile avatar.,
    /pavatarhelp - Shows this command.`,
 	],
 	
