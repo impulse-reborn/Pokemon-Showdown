@@ -11,7 +11,7 @@
 
 const FS = require(("../../../.lib-dist/fs")).FS;
 
-let emoticons = {"feelsbd": "http://i.imgur.com/TZvJ1lI.png"};
+let emoticons = {"feelsbd": "https://cdn.betterttv.net/emote/55b6e2e03293ee267743902b/2x"};
 let emoteRegex = new RegExp("feelsbd", "g");
 Server.ignoreEmotes = {};
 try {
