@@ -9,7 +9,7 @@
 
 "use strict";
 
-let geoip = require("geoip-lite-country");
+// let geoip = require("geoip-lite-country");
 
 // fill your server's IP in your config.js for exports.serverIp
 const serverIp = Config.serverIp;
@@ -687,9 +687,9 @@ exports.commands = {
 		profileData += `${showBadges(toID(username))}`;
 		profileData += `<div style="display: inline-block; width: 6.5em; height: 100%; vertical-align: top"><img src="${pAvatar(userid)}" height="80" width="80" align="left"></div>`;
 		profileData += `<div style="display: inline-block">&nbsp;${pColor(userid)}<strong>Name:</strong></font> ${Server.nameColor(username, true)}&nbsp;`;
-		if (Users(userid) && ip && ip !== null) {
+		/* if (Users(userid) && ip && ip !== null) {
 			profileData += ` <img src="http://flags.fmcdn.net/data/flags/normal/${ip.country.toLowerCase()}.png" alt="${ip.country}" title="${ip.country}" width="20" height="10">`;
-		}
+		}*/
 		if (profile.data.title.title) profileData += ` <font color="${profile.data.title.color}">(<strong>${profile.data.title.title}</strong>)</font>`;
 		profileData += `<br />`;
 		profileData += `&nbsp;${pColor(userid)}<strong>Group:</strong> ${userGroup}</font>`;
