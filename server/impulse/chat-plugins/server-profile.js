@@ -682,7 +682,7 @@ exports.commands = {
 		if (profile.background) {
 			profileData += `<div style="background:url(${profile.background}); background-size: 100% 100%; height: 160px; padding: 5px; border: ${pBorder(userid)}; overflow-y: auto">`;
 		} else {
-			profileData += `<div style="max-height: 160px; border: ${pBorder(userid)}; overflow-y: auto">`;
+			profileData += `<div style="max-height: 160px; border: ${pBorder(userid)}; overflow-y: auto"><br>`;
 		}
 		profileData += `${showBadges(toID(username))}`;
 		profileData += `<div style="display: inline-block; width: 6.5em; height: 100%; vertical-align: top"><img src="${pAvatar(userid)}" height="80" width="80" align="left"></div>`;
