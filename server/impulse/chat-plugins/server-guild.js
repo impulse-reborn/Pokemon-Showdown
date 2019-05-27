@@ -53,7 +53,7 @@ function logPointsUser(user, league, amount, reason) {
 
 function log(message) {
 	if (!message) return false;
-	fs.appendFile('logs/leagues.log', '[' + new Date().toUTCString() + '] ' + message + '\n', function (err) {
+	fs.appendFileSync('logs/leagues.log', '[' + new Date().toUTCString() + '] ' + message + '\n', function (err) {
                    if (err) throw err;
            });
 }
@@ -69,7 +69,7 @@ function leaguePM(message, league) {
 
 function leagueLog(message, league) {
 	let leagueid = toID(league);
-	fs.appendFile('logs/leagues/' + leagueid + '.log', '[' + new Date().toUTCString() + '] ' + message + '\n', function (err) {
+	fs.appendFileSync('logs/leagues/' + leagueid + '.log', '[' + new Date().toUTCString() + '] ' + message + '\n', function (err) {
                    if (err) throw err;
            });
 }
@@ -215,9 +215,7 @@ exports.commands = {
 				},
 			};
 			save();
-			fs.writeFile('./logs/leagues/' + leagueid + '.log', ' ' + leagueid +' has been created by ' + Server.nameColor(user.name, true) + '', function (err) {
-                   if (err) throw err;
-           });
+            leagueLog(user.name + " have created " + leagueName + " guild.");
 			this.sendReply("You've created the guild \"" + leagueName + "\".");
 		},
 
