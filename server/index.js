@@ -100,7 +100,7 @@ global.Server = require('../server/impulse/chat-plugins/components.js').Server;
  
 // Store Data In Cloud Storage ( MongoDB ).
 // Disable Local Storage While Using Cloud Storage 
-global.Db = require('nef')(require('nef-mongo')('mongodb+srv://PrinceSky:Impulsedb@impulse-ps-ys4ke.mongodb.net/test?retryWrites=true')); 
+global.Db = require('nef')(require('impulse-mongo')('mongodb+srv://PrinceSky:<password>@impulsedb-ys4ke.mongodb.net/test?retryWrites=true')); 
 
 // Sqlite3 For Storing Guild Data
 global.sqlite3 = require('sqlite3'); 
