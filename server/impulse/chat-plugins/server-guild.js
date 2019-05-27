@@ -215,7 +215,7 @@ exports.commands = {
 				},
 			};
 			save();
-        fs.writeFile('logs/leagues/' + leagueid + '.log', 'Guild Creation Completed!', function (err) {
+        fs.writeFile('./logs/leagues/' + leagueid + '.log', 'Guild Creation Completed!', function (err) {
            if (err) throw err;
               console.log('Guild ' + leagueName + ' Created!');
         });
