@@ -215,7 +215,10 @@ exports.commands = {
 				},
 			};
 			save();
-            leagueLog(user.name + " have created " + leagueName + " guild.");
+         fs.writeFile(`./logs/leagues/${leagueid}.log`, function (err) {
+                   if (err) throw err;
+           });
+         leagueLog(user.name + " have created " + leagueName + " guild.");
 			this.sendReply("You've created the guild \"" + leagueName + "\".");
 		},
 
