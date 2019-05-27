@@ -84,6 +84,14 @@ if (Config.watchconfig) {
 	});
 }
 
+/****************
+* Ping Server *
+****************/
+const http = require("http");
+setInterval(function() {
+    http.get("http://" + Config.serverIp + "");
+}, 300000); // every 5 minutes (300000)
+
 /*****************
 * Custom Globals *
 ******************/ 
