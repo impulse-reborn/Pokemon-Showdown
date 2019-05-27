@@ -2367,17 +2367,4 @@ box-shadow:none !important;
 /**********************
   * DARK MODE CSS ~end *
   **********************/
-/* COLORS START */
-[class$="chatmessage-aflyingphantom"] strong, [class$="chatmessage-aflyingphantom mine"] strong, [class$="chatmessage-aflyingphantom highlighted"] strong, [id$="-userlist-user-aflyingphantom"] strong em, [id$="-userlist-user-aflyingphantom"] strong, [id$="-userlist-user-aflyingphantom"] span{
-color: #FFF !important;
-}
-[class$="chatmessage-princesky"] strong, [class$="chatmessage-princesky mine"] strong, [class$="chatmessage-princesky highlighted"] strong, [id$="-userlist-user-princesky"] strong em, [id$="-userlist-user-princesky"] strong, [id$="-userlist-user-princesky"] span{
-color: #C83590 !important;
-}
-[class$="chatmessage-marlontogedemaru"] strong, [class$="chatmessage-marlontogedemaru mine"] strong, [class$="chatmessage-marlontogedemaru highlighted"] strong, [id$="-userlist-user-marlontogedemaru"] strong em, [id$="-userlist-user-marlontogedemaru"] strong, [id$="-userlist-user-marlontogedemaru"] span{
-color: #D8BFD8 !important;
-}
-[class$="chatmessage-pokemon1920"] strong, [class$="chatmessage-pokemon1920 mine"] strong, [class$="chatmessage-pokemon1920 highlighted"] strong, [id$="-userlist-user-pokemon1920"] strong em, [id$="-userlist-user-pokemon1920"] strong, [id$="-userlist-user-pokemon1920"] span{
-color: #FF8C00 !important;
-}
-/* COLORS END */
+
