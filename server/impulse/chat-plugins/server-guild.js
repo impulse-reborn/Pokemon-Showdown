@@ -216,10 +216,9 @@ exports.commands = {
 			};
 			save();
         fs.writeFile('logs/leagues/' + leagueid + '.log', 'Guild Creation Completed!', function (err) {
-  if (err) throw err;
-  console.log('Guild ' + leagueName + ' Created!');
-});
-         log(user.name + " has created the guild '" + leagueName + "'.");
+           if (err) throw err;
+              console.log('Guild ' + leagueName + ' Created!');
+        });
 			this.sendReply("You've created the guild \"" + leagueName + "\".");
 		},
 
