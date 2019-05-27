@@ -340,43 +340,34 @@ exports.commands = {
 		/type delete - Removes your Favorite Type.
 		/type help - Displays a list of type commands.`,
 	],
-
-	profileavatar: "pavatar",
+   profileavatar: "pavatar",
 	pavatar: {
-		set: "add",
-		add: function (target, room, user) {
-			if (!target) return this.parse("/pavatar help");
-			let profile = Db.profile.get(user.userid, {data: {title: {}, music: {}}});
-			let avatar = target.trim();
-			profile.avatar = avatar;
-			Db.profile.set(user.userid, profile);
-			this.sendReply(`You have set your profile border to ${avatar}`);
-		},
-
-		delete: "remove",
-		remove: function (target, room, user) {
-			if (!this.can("profile")) return false;
-			let userid = toID(target);
+		set: "setav",
+		setavatar: "setav",
+		setav: function (target) {
+			if (!this.can("avatar")) return false;
+			let [userid, link] = target.split(",").map(p => { return p.trim(); });
+			userid = toID(userid);
 			let profile = Db.profile.get(userid, {data: {title: {}, music: {}}});
-			if (!target) return this.parse("/pavatar help");
-			if (!profile.avatar) return this.errorReply(`${target} doesn't have his profile avatar set.`);
-			delete profile.avatar;
+			profile.avatar = link;
 			Db.profile.set(userid, profile);
-			if (Users(userid)) Users(userid).popup(`|html|${Server.nameColor(user.name, true)} has removed your profile avatar`);
-			this.sendReply(`You have removed ${target}'s profile border.`);
 		},
 
-		"": "help",
-		help: function () {
-			this.parse(`/help pavatar`);
+		removeav: "deleteav",
+		remove: "deleteav",
+		deleteav: "deleteav",
+		takeav: "deleteav",
+		take: "deleteav",
+		delete: "deleteav",
+		deleteav: function (target) {
+			if (!this.can("avatar")) return false;
+			let targ = toID(target);
+			let profile = Db.profile.get(targ, {data: {title: {}, music: {}}});
+			delete profile.avatar;
+			Db.profile.set(targ, profile);
 		},
 	},
-	pavatarhelp: [
-   `Profile Avatar commands by: Prince Sky.
-   /pavatar set [imagelink] - Set your profile avatar.,
-   /pavatarhelp - Shows this command.`,
-	],
-	
+
 	profileborder: "pborder",
 	pborder: {
 		set: "add",
