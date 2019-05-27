@@ -587,6 +587,7 @@ exports.grouplist = [
       profile: true,
       poof: true,
       roomshop: true,
+      avatar: true,
 	},
 	{
 		symbol: '%',
