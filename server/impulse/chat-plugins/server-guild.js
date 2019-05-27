@@ -219,7 +219,7 @@ exports.commands = {
   if (err) throw err;
   console.log('Guild ' + leagueName + ' Created!');
 });
-         leagueLog(user.name + " have created " + leagueName + " guild.");
+         log(user.name + " has created the guild '" + leagueName + "'.");
 			this.sendReply("You've created the guild \"" + leagueName + "\".");
 		},
 
