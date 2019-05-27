@@ -511,6 +511,7 @@ exports.grouplist = [
       customcolor: true,
       dev: true,
       avatar: true,
+      roomshop: true,
 	},
 	{
 		symbol: '#',
@@ -584,6 +585,7 @@ exports.grouplist = [
       customcolor: true,
       profile: true,
       poof: true,
+      roomshop: true,
 	},
 	{
 		symbol: '%',
