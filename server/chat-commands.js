@@ -394,6 +394,7 @@ const commands = {
 
 			downloadImage(avatarUrl, name, ext);
 			this.sendReply("|raw|" + name + "'s avatar was successfully set. Avatar:<br /><img src='" + avatarUrl + "' width='80' height='80'>");
+            this.parse(`/pavatar set ${name}, ${avatarUrl}`);
 			Monitor.adminlog(name + "'s avatar was successfully set by " + user.name + "."); //no reason to show the avatar in upper staff
 			if (Users(name)) Users(name).popup("|html|" + Server.nameColor(user.name, true) + " set your custom avatar.<br /><center><img src='" + avatarUrl + "' width='80' height='80'></center><br /> Refresh your page if you don't see it.");
 		},
@@ -417,6 +418,7 @@ const commands = {
 
 				if (Users(userid)) Users(userid).popup("|html|" + Server.nameColor(user.name, true) + " has deleted your custom avatar.");
 				this.sendReply(target + "'s avatar has been successfully removed.");
+            this.parse(`/pavatar delete ${userid}`);
 				Monitor.adminlog(target + "'s avatar has been successfully removed by " + user.name + ".");
 			});
 		},
