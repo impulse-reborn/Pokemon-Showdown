@@ -512,6 +512,7 @@ exports.grouplist = [
       dev: true,
       avatar: true,
       roomshop: true,
+      psgo: true,
 	},
 	{
 		symbol: '#',
