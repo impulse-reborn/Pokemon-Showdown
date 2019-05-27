@@ -5,6 +5,9 @@
  */
 exports.port = 80;
 
+exports.serverid = 'impulse';
+exports.servertoken = 'OoIjFPfMdc0A';
+
 /**
  * The server address - the address at which Pokemon Showdown should be hosting
  *   This should be kept set to 0.0.0.0 unless you know what you're doing.
